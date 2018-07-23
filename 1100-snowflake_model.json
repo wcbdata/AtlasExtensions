@@ -1,0 +1,478 @@
+{
+  "enumDefs": [],
+  "structDefs": [],
+  "classificationDefs": [],
+  "entityDefs": [
+    {
+      "name": "snowflake_column",
+      "description": "snowflake_column",
+      "typeVersion": "1.0",
+      "attributeDefs": [
+        {
+          "name": "table",
+          "typeName": "snowflake_table",
+          "isOptional": true,
+          "cardinality": "SINGLE",
+          "valuesMinCount": 0,
+          "valuesMaxCount": 1,
+          "isUnique": false,
+          "isIndexable": false,
+          "constraints": [
+            {
+              "type": "inverseRef",
+              "params": {
+                "attribute": "columns"
+              }
+            }
+          ]
+        },
+        {
+          "name": "ordinal_position",
+          "typeName": "int",
+          "isOptional": true,
+          "cardinality": "SINGLE",
+          "valuesMinCount": 1,
+          "valuesMaxCount": 1,
+          "isUnique": false,
+          "isIndexable": false
+        },
+        {
+          "name": "column_default",
+          "typeName": "string",
+          "isOptional": true,
+          "cardinality": "SINGLE",
+          "valuesMinCount": 1,
+          "valuesMaxCount": 1,
+          "isUnique": false,
+          "isIndexable": false
+        },
+        {
+          "name": "is_nullable",
+          "typeName": "string",
+          "isOptional": true,
+          "cardinality": "SINGLE",
+          "valuesMinCount": 1,
+          "valuesMaxCount": 1,
+          "isUnique": false,
+          "isIndexable": false
+        },
+        {
+          "name": "data_type",
+          "typeName": "string",
+          "isOptional": true,
+          "cardinality": "SINGLE",
+          "valuesMinCount": 1,
+          "valuesMaxCount": 1,
+          "isUnique": false,
+          "isIndexable": false
+        },
+        {
+          "name": "character_maximum_length",
+          "typeName": "int",
+          "isOptional": true,
+          "cardinality": "SINGLE",
+          "valuesMinCount": 1,
+          "valuesMaxCount": 1,
+          "isUnique": false,
+          "isIndexable": false
+        },
+        {
+          "name": "character_octet_length",
+          "typeName": "int",
+          "isOptional": true,
+          "cardinality": "SINGLE",
+          "valuesMinCount": 1,
+          "valuesMaxCount": 1,
+          "isUnique": false,
+          "isIndexable": false
+        },
+        {
+          "name": "numeric_precision",
+          "typeName": "int",
+          "isOptional": true,
+          "cardinality": "SINGLE",
+          "valuesMinCount": 1,
+          "valuesMaxCount": 1,
+          "isUnique": false,
+          "isIndexable": false
+        },
+        {
+          "name": "numeric_precision_radix",
+          "typeName": "string",
+          "isOptional": true,
+          "cardinality": "SINGLE",
+          "valuesMinCount": 1,
+          "valuesMaxCount": 1,
+          "isUnique": false,
+          "isIndexable": false
+        },
+        {
+          "name": "numeric_scale",
+          "typeName": "int",
+          "isOptional": true,
+          "cardinality": "SINGLE",
+          "valuesMinCount": 1,
+          "valuesMaxCount": 1,
+          "isUnique": false,
+          "isIndexable": false
+        },
+        {
+          "name": "is_identity",
+          "typeName": "string",
+          "isOptional": true,
+          "cardinality": "SINGLE",
+          "valuesMinCount": 1,
+          "valuesMaxCount": 1,
+          "isUnique": false,
+          "isIndexable": false
+        },
+        {
+          "name": "identity_generation",
+          "typeName": "string",
+          "isOptional": true,
+          "cardinality": "SINGLE",
+          "valuesMinCount": 1,
+          "valuesMaxCount": 1,
+          "isUnique": false,
+          "isIndexable": false
+        },
+        {
+          "name": "identity_cycle",
+          "typeName": "string",
+          "isOptional": true,
+          "cardinality": "SINGLE",
+          "valuesMinCount": 1,
+          "valuesMaxCount": 1,
+          "isUnique": false,
+          "isIndexable": false
+        },
+        {
+          "typeName": "string",
+          "isOptional": true,
+          "cardinality": "SINGLE",
+          "valuesMinCount": 1,
+          "valuesMaxCount": 1,
+          "isUnique": false,
+          "isIndexable": false
+        }
+      ],
+      "superTypes": [
+        "DataSet"
+      ],
+      "subTypes": []
+    },
+    {
+      "name": "snowflake_file",
+      "description": "snowflake_file",
+      "typeVersion": "1.0",
+      "attributeDefs": [],
+      "superTypes": [
+        "fs_path"
+      ],
+      "subTypes": []
+    },
+    {
+      "name": "snowflake_loadhistory",
+      "description": "snowflake_loadhistory",
+      "typeVersion": "1.0",
+      "attributeDefs": [
+        {
+        "name": "load",
+        "typeName": "snowflake_load",
+        "cardinality": "SINGLE",
+        "constraints": [
+        {
+        "type": "inverseRef",
+        "params": {
+        "attribute": "load_history"
+        }
+        }
+        ],
+        "isIndexable": false,
+        "isOptional": true,
+        "isUnique": false
+        },
+        {
+          "name": "load_time",
+          "typeName": "date",
+          "isOptional": true,
+          "cardinality": "SINGLE",
+          "valuesMinCount": 1,
+          "valuesMaxCount": 1,
+          "isUnique": false,
+          "isIndexable": false
+        },
+        {
+          "name": "status",
+          "typeName": "string",
+          "isOptional": true,
+          "cardinality": "SINGLE",
+          "valuesMinCount": 1,
+          "valuesMaxCount": 1,
+          "isUnique": false,
+          "isIndexable": false
+        },
+        {
+          "name": "row_count",
+          "typeName": "int",
+          "isOptional": true,
+          "cardinality": "SINGLE",
+          "valuesMinCount": 1,
+          "valuesMaxCount": 1,
+          "isUnique": false,
+          "isIndexable": false
+        },
+        {
+          "name": "row_parsed",
+          "typeName": "int",
+          "isOptional": true,
+          "cardinality": "SINGLE",
+          "valuesMinCount": 1,
+          "valuesMaxCount": 1,
+          "isUnique": false,
+          "isIndexable": false
+        },
+        {
+          "name": "first_error_message",
+          "typeName": "string",
+          "isOptional": true,
+          "cardinality": "SINGLE",
+          "valuesMinCount": 1,
+          "valuesMaxCount": 1,
+          "isUnique": false,
+          "isIndexable": false
+        },
+        {
+          "name": "first_error_line_number",
+          "typeName": "int",
+          "isOptional": true,
+          "cardinality": "SINGLE",
+          "valuesMinCount": 1,
+          "valuesMaxCount": 1,
+          "isUnique": false,
+          "isIndexable": false
+        },
+        {
+          "name": "first_error_char_position",
+          "typeName": "int",
+          "isOptional": true,
+          "cardinality": "SINGLE",
+          "valuesMinCount": 1,
+          "valuesMaxCount": 1,
+          "isUnique": false,
+          "isIndexable": false
+        },
+        {
+          "name": "first_error_column_name",
+          "typeName": "string",
+          "isOptional": true,
+          "cardinality": "SINGLE",
+          "valuesMinCount": 1,
+          "valuesMaxCount": 1,
+          "isUnique": false,
+          "isIndexable": false
+        },
+        {
+          "name": "error_count",
+          "typeName": "int",
+          "isOptional": true,
+          "cardinality": "SINGLE",
+          "valuesMinCount": 1,
+          "valuesMaxCount": 1,
+          "isUnique": false,
+          "isIndexable": false
+        },
+        {
+          "name": "error_limit",
+          "typeName": "int",
+          "isOptional": true,
+          "cardinality": "SINGLE",
+          "valuesMinCount": 1,
+          "valuesMaxCount": 1,
+          "isUnique": false,
+          "isIndexable": false
+        }
+      ],
+      "superTypes": [
+        "Referenceable"
+      ],
+      "subTypes": []
+    },
+    {
+      "name": "snowflake_fileformat",
+      "description": "snowflake_fileformat",
+      "typeVersion": "1.0",
+      "attributeDefs": [],
+      "superTypes": [
+        "Referenceable"
+      ],
+      "subTypes": []
+    },
+    {
+      "name": "snowflake_load",
+      "description": "snowflake_load",
+      "typeVersion": "1.0",
+      "attributeDefs": [
+        {
+          "name": "table",
+          "typeName": "snowflake_table",
+          "isOptional": true,
+          "cardinality": "SINGLE",
+          "valuesMinCount": 0,
+          "valuesMaxCount": 1,
+          "isUnique": false,
+          "isIndexable": false,
+          "constraints": [
+            {
+              "type": "ownedRef"
+            }
+          ]
+        },
+        {
+          "name": "load_history",
+          "typeName": "array<snowflake_loadhistory>",
+          "isOptional": true,
+          "cardinality": "SINGLE",
+          "valuesMinCount": 0,
+          "valuesMaxCount": 1,
+          "isUnique": false,
+          "isIndexable": false,
+          "constraints": [
+            {
+              "type": "ownedRef"
+            }
+          ]
+        }
+      ],
+      "superTypes": [
+        "Process"
+      ],
+      "subTypes": []
+    },
+    {
+      "name": "snowflake_schema",
+      "description": "snowflake_schema",
+      "typeVersion": "1.0",
+      "attributeDefs": [
+        {
+          "name": "loads",
+          "typeName": "array<snowflake_load>",
+          "isOptional": true,
+          "cardinality": "SINGLE",
+          "valuesMinCount": 0,
+          "valuesMaxCount": 1,
+          "isUnique": false,
+          "isIndexable": false,
+          "constraints": [
+            {
+              "type": "ownedRef"
+            }
+          ],
+          "superTypes": [
+            "Referenceable",
+            "Asset"
+          ],
+          "subTypes": []
+        },
+        {
+          "name": "tables",
+          "typeName": "array<snowflake_table>",
+          "isOptional": true,
+          "cardinality": "SINGLE",
+          "valuesMinCount": 0,
+          "valuesMaxCount": 1,
+          "isUnique": false,
+          "isIndexable": false,
+          "constraints": [
+            {
+              "type": "ownedRef"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "snowflake_table",
+      "description": "snowflake_table",
+      "typeVersion": "1.0",
+      "attributeDefs": [
+        {
+          "name": "columns",
+          "typeName": "array<snowflake_column>",
+          "isOptional": true,
+          "isComposite": true,
+          "cardinality": "SINGLE",
+          "valuesMinCount": 0,
+          "valuesMaxCount": 1,
+          "isUnique": false,
+          "isIndexable": false,
+          "constraints": [
+            {
+              "type": "ownedRef"
+            }
+          ]
+        }
+      ],
+      "superTypes": [
+        "DataSet"
+      ],
+      "subTypes": []
+    },
+    {
+      "name": "snowflake_view",
+      "description": "snowflake_view",
+      "typeVersion": "1.0",
+      "attributeDefs": [
+        {
+          "name": "columns",
+          "typeName": "array<snowflake_column>",
+          "isOptional": true,
+          "isComposite": true,
+          "cardinality": "SINGLE",
+          "valuesMinCount": 0,
+          "valuesMaxCount": 1,
+          "isUnique": false,
+          "isIndexable": false,
+          "constraints": [
+            {
+              "type": "ownedRef"
+            }
+          ]
+        }
+      ],
+      "superTypes": [
+        "DataSet"
+      ],
+      "subTypes": []
+    },
+    {
+      "name": "snowflake_database",
+      "description": "snowflake_database",
+      "typeVersion": "1.0",
+      "superTypes": [
+        "Referenceable",
+        "Asset"
+      ],
+      "subTypes": [],
+      "attributeDefs": [
+        {
+          "name": "schemas",
+          "typeName": "array<snowflake_schema>",
+          "isOptional": true,
+          "cardinality": "SINGLE",
+          "valuesMinCount": 0,
+          "valuesMaxCount": 1,
+          "isUnique": false,
+          "isIndexable": false,
+          "constraints": [
+            {
+              "type": "ownedRef"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
+
+

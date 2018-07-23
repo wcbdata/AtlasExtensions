@@ -1,0 +1,181 @@
+{
+    "enumDefs": [],
+    "structDefs": [],
+    "classificationDefs": [],
+    "entityDefs": [
+        {
+          "name": "nifi_queue",
+          "description": "nifi_queue",
+          "typeVersion": "1.0",
+          "attributeDefs": [],
+          "superTypes": [
+            "nifi_component",
+            "DataSet"
+          ],
+          "subTypes": []
+        },
+        {
+          "name": "nifi_component",
+          "description": "nifi_component",
+          "typeVersion": "1.0",
+          "attributeDefs": [
+            {
+              "name": "nifiFlow",
+              "typeName": "nifi_flow",
+              "isOptional": true,
+              "cardinality": "SINGLE",
+              "valuesMinCount": 0,
+              "valuesMaxCount": 1,
+              "isUnique": false,
+              "isIndexable": false
+            }
+          ],
+          "superTypes": [],
+          "subTypes": [
+            "nifi_output_port",
+            "nifi_queue",
+            "nifi_flow_path",
+            "nifi_input_port",
+            "nifi_data"
+          ]
+        },
+        {
+          "name": "nifi_flow",
+          "description": "nifi_flow",
+          "typeVersion": "1.0",
+          "attributeDefs": [
+            {
+              "name": "url",
+              "typeName": "string",
+              "isOptional": false,
+              "cardinality": "SINGLE",
+              "valuesMinCount": 1,
+              "valuesMaxCount": 1,
+              "isUnique": false,
+              "isIndexable": false
+            },
+            {
+              "name": "flowPaths",
+              "typeName": "array<nifi_flow_path>",
+              "isOptional": true,
+              "cardinality": "SINGLE",
+              "valuesMinCount": 0,
+              "valuesMaxCount": 1,
+              "isUnique": false,
+              "isIndexable": false,
+              "constraints": [
+                {
+                  "type": "ownedRef"
+                }
+              ]
+            },
+            {
+              "name": "queues",
+              "typeName": "array<nifi_queue>",
+              "isOptional": true,
+              "cardinality": "SINGLE",
+              "valuesMinCount": 0,
+              "valuesMaxCount": 1,
+              "isUnique": false,
+              "isIndexable": false,
+              "constraints": [
+                {
+                  "type": "ownedRef"
+                }
+              ]
+            },
+            {
+              "name": "inputPorts",
+              "typeName": "array<nifi_input_port>",
+              "isOptional": true,
+              "cardinality": "SINGLE",
+              "valuesMinCount": 0,
+              "valuesMaxCount": 1,
+              "isUnique": false,
+              "isIndexable": false,
+              "constraints": [
+                {
+                  "type": "ownedRef"
+                }
+              ]
+            },
+            {
+              "name": "outputPorts",
+              "typeName": "array<nifi_output_port>",
+              "isOptional": true,
+              "cardinality": "SINGLE",
+              "valuesMinCount": 0,
+              "valuesMaxCount": 1,
+              "isUnique": false,
+              "isIndexable": false,
+              "constraints": [
+                {
+                  "type": "ownedRef"
+                }
+              ]
+            }
+          ],
+          "superTypes": [
+            "Referenceable",
+            "Asset"
+          ],
+          "subTypes": []
+        },
+        {
+          "name": "nifi_data",
+          "description": "nifi_data",
+          "typeVersion": "1.0",
+          "attributeDefs": [],
+          "superTypes": [
+            "nifi_component",
+            "DataSet"
+          ],
+          "subTypes": []
+        },
+        {
+          "name": "nifi_flow_path",
+          "description": "nifi_flow_path",
+          "typeVersion": "1.0",
+          "attributeDefs": [
+            {
+              "name": "url",
+              "typeName": "string",
+              "isOptional": false,
+              "cardinality": "SINGLE",
+              "valuesMinCount": 1,
+              "valuesMaxCount": 1,
+              "isUnique": false,
+              "isIndexable": false
+            }
+          ],
+          "superTypes": [
+            "nifi_component",
+            "Process"
+          ],
+          "subTypes": []
+        },
+        {
+          "name": "nifi_input_port",
+          "description": "nifi_input_port",
+          "typeVersion": "1.0",
+          "attributeDefs": [],
+          "superTypes": [
+            "nifi_component",
+            "DataSet"
+          ],
+          "subTypes": []
+        },
+        {
+          "name": "nifi_output_port",
+          "description": "nifi_output_port",
+          "typeVersion": "1.0",
+          "attributeDefs": [],
+          "superTypes": [
+            "nifi_component",
+            "DataSet"
+          ],
+          "subTypes": []
+        }
+    ]
+}
+

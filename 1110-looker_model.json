@@ -1,0 +1,85 @@
+{
+  "enumDefs": [],
+  "structDefs": [],
+  "classificationDefs": [],
+  "entityDefs": [
+    {
+      "name": "looker_report",
+      "description": "looker_report",
+      "typeVersion": "1.0",
+      "attributeDefs": [
+        {
+          "name": "tables",
+          "typeName": "array<looker_table>",
+          "isOptional": true,
+          "cardinality": "SINGLE",
+          "valuesMinCount": 0,
+          "valuesMaxCount": 1,
+          "isUnique": false,
+          "isIndexable": false,
+          "constraints": [
+            {
+              "type": "ownedRef"
+            }
+          ]
+        }
+      ],
+      "superTypes": [
+        "looker_component",
+        "Referenceable"
+      ],
+      "subTypes": []
+    },
+    {
+      "name": "looker_table",
+      "description": "looker_table",
+      "typeVersion": "1.0",
+      "attributeDefs": [],
+          "superTypes": [
+            "looker_component"
+          ],
+          "subTypes": []
+        },
+    {
+      "name": "looker_database_connection",
+      "description": "looker_database_connection",
+      "typeVersion": "1.0",
+      "superTypes": [
+        "DataSet",
+        "Referenceable",
+        "Asset"
+      ],
+      "subTypes": [],
+      "attributeDefs": [
+        {
+          "name": "tables",
+          "typeName": "array<looker_table>",
+          "isOptional": true,
+          "cardinality": "SINGLE",
+          "valuesMinCount": 0,
+          "valuesMaxCount": 1,
+          "isUnique": false,
+          "isIndexable": false,
+          "constraints": [
+            {
+              "type": "ownedRef"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "looker_component",
+      "description": "looker_component",
+      "typeVersion": "1.0",
+      "attributeDefs": [],
+      "subTypes": [
+        "looker_database_connection",
+        "looker_table",
+        "looker_report"
+      ]
+    }
+  ]
+}
+
+
